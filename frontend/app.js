@@ -11,13 +11,13 @@ function consulta_general() {
   
       let b = "";
       for (let i = 0; i < data.baul.length; i++) {
-        console.log(i, data.baul[i].Plataforma);
+        console.log(i, data.baul[i].plataforma);
         console.log(i, data.baul[i].usuario);
         console.log(i, data.baul[i].clave);
   
         b += `<tr>
           <td>${data.baul[i].id_baul}</td>
-          <td>${data.baul[i].Plataforma}</td>
+          <td>${data.baul[i].plataforma}</td>
           <td>${data.baul[i].usuario}</td>
           <td>${data.baul[i].clave}</td>
           <td><button type="button" class="btn btn-info" onclick="location.href = 'edit.html?variable1=${data.baul[i].id_baul}'"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCdKFuUTRiYFn_8XLn0FR_jht8CHzSXr5U_w&s" height="30" width="30"></button>
@@ -94,7 +94,7 @@ function consulta_general() {
     const visualizar = (data) => {
       console.log("Fetched individual data:", data);
   
-      document.getElementById("plataforma").value = data.baul.Plataforma;
+      document.getElementById("plataforma").value = data.baul.plataforma;
       document.getElementById("usuario").value = data.baul.usuario;
       document.getElementById("clave").value = data.baul.clave;
     };

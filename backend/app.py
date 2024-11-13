@@ -51,7 +51,7 @@ def registro():
     try:
         conn=conectar('localhost','root','','gestor_contrasena')
         cur = conn.cursor()
-        x=cur.execute(""" insert into baul (plataforma,usuario,clave) values \
+        x=cur.execute(""" insert into baul (Plataforma,usuario,clave) values \
             ('{0}','{1}','{2}')""".format(request.json['plataforma'],\
                 request.json['usuario'],request.json['clave']))
         conn.commit() ## para confirmar la insercion de la informacion
@@ -87,6 +87,7 @@ def actualizar(codigo):
         conn.commit()
         cur.close()
         conn.close()
+        return jsonify({'mensaje':'registro actualizado'})
         
     except Exception as ex:
         print(ex)
